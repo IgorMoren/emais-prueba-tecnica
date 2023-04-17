@@ -1,0 +1,7 @@
+<h1>Buscador de peliculas</h1>
+<app-search (moviesEmitter)="getMoviesData($event)" ></app-search>
+<div class="card-container" >
+   <mat-spinner *ngIf="isLoading"></mat-spinner>
+   <app-movie-card *ngFor="let movie of movies" [data] = "movie" ></app-movie-card>
+   <p *ngIf="notFound" >No se encuentran peliculas con el termino {{ searchInputValue }}</p>
+</div>

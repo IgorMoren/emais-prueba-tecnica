@@ -1,0 +1,17 @@
+<mat-card class="card" *ngIf="data">
+   <mat-card-header>
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>{{ data.title }}</mat-card-title>
+   </mat-card-header>
+   <img mat-card-image src="{{ data.poster_path }}" alt=" {{ data.title }}">
+   <mat-card-content>
+      <p>
+         {{ data.release_date }}
+      </p>
+   </mat-card-content>
+   <mat-card-actions>
+      <button mat-button (click)="saveDataInLocalStorage()"> 
+         <mat-icon>favorite</mat-icon> {{ isFavorite ? 'Eliminar de favoritos' : 'Añadir a favoritos' }} 
+      </button>
+   </mat-card-actions>
+</mat-card>

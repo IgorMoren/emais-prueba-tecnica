@@ -1,0 +1,5 @@
+<h1>Peliculas favoritas</h1>
+<div class="card-container" >
+   <mat-spinner *ngIf="isLoading"></mat-spinner>
+   <app-movie-card *ngFor="let movie of movies" [isFavorite]="true" [data] = "movie" ></app-movie-card>
+</div>
